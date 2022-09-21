@@ -2,7 +2,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
-import java.util.function.DoubleToIntFunction;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -65,6 +64,9 @@ public class Main {
 
         // Vi kan kontrollera att tex Z bara har 31 namn genom facit med vår andra metod PersonService.getCountOfNamesThatStartsWithLetter(names, 'z');
         System.out.println("Namn på Z: " + PersonService.getCountOfNamesThatStartsWithLetter(names, 'z'));
+
+
+        // TODO Just nu är bara listan med Namn == String, gör några Person objekt medhjälp av Filen!
 
 
     }
