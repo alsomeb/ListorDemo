@@ -32,18 +32,18 @@ public class FileHandler {
         pw.close();
     }
 
-    public static String getRandomCatOrDog() {
+    private static String getRandomCatOrDog() {
         ArrayList<String> animals = new ArrayList<>(List.of("Cat", "Dog"));
         Random random = new Random();
         return animals.get(random.nextInt(animals.size()));
     }
 
-    public static int getRandomAgeBetweenOneAndTen() {
+    private static int getRandomAgeBetweenOneAndTen() {
         Random rand = new Random();
         return rand.nextInt(1, 11);
     }
 
-    public static boolean checkIfAnimalsFileExist() {
+    private static boolean checkIfAnimalsFileExist() {
         File animalFile = new File("src/FileService/animals.txt");
         return animalFile.exists();
     }
