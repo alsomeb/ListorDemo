@@ -1,3 +1,6 @@
+package Person;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -67,6 +70,19 @@ public class PersonService {
         }
 
         return mapOfNamesFirstLetterToCount;
+    }
+
+    public static List<Person> createListOf100FirstPersonsFromFile() throws FileNotFoundException {
+        Scanner scan = new Scanner(new File("src/FileService/names.txt"));
+        ArrayList<Person> persons = new ArrayList<>();
+
+        int count = 0;
+        while(scan.hasNextLine() && count < 100) {
+            persons.add(new Person(scan.nextLine())); // <-- current Name in the loop
+            count++;
+        }
+
+        return persons;
     }
 }
 

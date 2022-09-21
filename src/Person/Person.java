@@ -1,3 +1,5 @@
+package Person;
+
 public class Person {
     private String name;
 
@@ -15,6 +17,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person: " + getName();
+        return "Person.Person: " + getName();
     }
 }
