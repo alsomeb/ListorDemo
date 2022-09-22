@@ -17,19 +17,19 @@ class PersonServiceTest {
         // Oftast får man göra flera tester för kan bli falskt positiva
         // Då vet man om 1 test failar att något kan va fel på metoden osv.
 
-        int expected = 3;
+        int expectedCount = 3;
         ArrayList<String> names = FileHandler.getNamesInFileAsList("src/FileService/names.txt");
         int givenCount = PersonService.getNameCountInList(names, "Al Hakim");
 
-        assertEquals(expected, givenCount);
+        assertEquals(expectedCount, givenCount);
     }
 
     @Test
     void testCreateListOf100FirstPersonsFromFileReturnsListOf100Size() throws FileNotFoundException {
-        int target = 100;
+        int expectedCount = 100;
         int givenCount = PersonService.createListOf100FirstPersonsFromFile().size();
 
-        assertEquals(target, givenCount);
+        assertEquals(expectedCount, givenCount);
 
     }
 }
