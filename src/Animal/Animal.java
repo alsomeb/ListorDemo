@@ -1,9 +1,9 @@
 package Animal;
 
 public class Animal {
-    String name;
-    int age;
-    AnimalOwner animalOwner;
+    protected String name;
+    protected int age;
+    protected AnimalOwner animalOwner;
 
     // Default no args Constructor
     public Animal() {

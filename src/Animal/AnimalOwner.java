@@ -1,7 +1,7 @@
 package Animal;
 
 public class AnimalOwner {
-    String name;
+    private String name;
 
     public AnimalOwner(String name) {
         this.name = name;
@@ -17,6 +17,6 @@ public class AnimalOwner {
 
     @Override
     public String toString() {
-        return "Owners name: " + name;
+        return "Owner: " + name;
     }
 }

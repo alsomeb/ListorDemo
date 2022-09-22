@@ -1,3 +1,6 @@
+import Animal.AnimalOwner;
+import Animal.Cat;
+import Animal.Dog;
 import FileService.FileHandler;
 import Person.Person;
 import Person.PersonService;
@@ -91,8 +94,26 @@ public class Main {
         // 6. Om de finns tid, implementera ngt testcase (Junit) - KLAR, finns 2 Junit tester som funkar
 
 
-        // 1.
+        // 1. + Lite Arv Testande
         FileHandler.handleCreateAnimalFile();
+
+        Cat dexter = new Cat("Dexter", 3, new AnimalOwner("Alex"), "Tonfisk");
+        System.out.println(dexter.getCatInfo() + "\n");
+
+        Dog alfonz = new Dog("Alfonz", 10, new AnimalOwner("Anki"), "Kyckling");
+        System.out.println(alfonz.getDogInfo());
+
+        AnimalOwner agnes = new AnimalOwner("Agnes");
+        dexter.catSold();
+
+        if(dexter.getAnimalOwner() == null) {
+            System.out.println("\n"+ dexter.getName() + " har ingen ägare just nu!");
+        } else {
+            System.out.println(dexter.getCatInfo());
+        }
+
+        dexter.newOwner(agnes);
+        System.out.println("\n" + dexter.getCatInfo());
 
 
     }
