@@ -30,6 +30,7 @@ public class FileHandler {
             pw.println(name + " " + randomAnimal + " " + randomAge);
         }
         pw.close();
+        System.out.println(names.size() + " Animals created in animals.txt");
     }
 
     private static String getRandomCatOrDog() {

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class PersonService {
     // Metoder som används på listan med Persons
+    // Finns flera metoder som löser samma uppgift, är pga jag vill lära mig mer Streams så gör om metoden till att använda Streams API
 
     public static void printAllNames(List<String> lista) {
         lista.forEach(name -> System.out.println(name));
