@@ -85,9 +85,10 @@ public class Main {
         // TODO Skapa ett program som tar in alla namn från names.txt som sedan skapar en ny textfil animals.txt
         // 1. Som sparar alla namn + mellanslag + Katt/Hund + mellanslag + ålder
         // 2. Skapa en klass Animal som har attributen Namn + ålder
-        // 3. Klass Dog/Cat som har Namn, som ärver av Animal
+        // 3. Klass Dog/Cat som har foodPreference eller något annat som inte är i superClass, ärver det andra av Animal
         // 4. Löper igenom den nya filen och skapar upp Cat/Dog och sorterar dem i listor av Cats / Dogs separat
         // 5. Skriv ut listorna till terminalen
+        // 6. Om de finns tid, kolla Sigrun's Github och implementera ngt testcase (Junit)
 
 
         // 1.
