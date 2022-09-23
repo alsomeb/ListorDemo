@@ -1,6 +1,4 @@
-import Animal.AnimalOwner;
-import Animal.Cat;
-import Animal.Dog;
+import Animal.*;
 import FileService.FileHandler;
 import Person.Person;
 import Person.PersonService;
@@ -41,10 +39,10 @@ public class Main {
         PersonService.printAllNamesReversedWithCollections(names);
 
         // 5.
-        System.out.println("\nAntal ggr Al Hakim i listan: " + PersonService.getNameCountInList(names, "Al Hakim"));
+        System.out.println("\nAntal ggr Al-Hakim i listan: " + PersonService.getNameCountInList(names, "Al-Hakim"));
 
-        System.out.println("\nAntal ggr Al Hakim i listan med Stream: " +
-                PersonService.getNameCountInListStream(names, "Al Hakim"));
+        System.out.println("\nAntal ggr Al-Hakim i listan med Stream: " +
+                PersonService.getNameCountInListStream(names, "Al-Hakim"));
 
 
         // Egna labbar
@@ -61,7 +59,7 @@ public class Main {
         System.out.println(unikaNamn);
         System.out.println(unikaNamn.size() + " st");
 
-        String hasAlHakim = unikaNamn.contains("Al Hakim") ? "Al Hakim finns i Set" : "Al Hakim finns inte i Set"; // Ternary Operator
+        String hasAlHakim = unikaNamn.contains("Al-Hakim") ? "Al-Hakim finns i Set" : "Al Hakim finns inte i Set"; // Ternary Operator
         System.out.println(hasAlHakim + "\n");
 
 
@@ -88,33 +86,46 @@ public class Main {
         // TODO Skapa ett program som tar in alla namn från names.txt som sedan skapar en ny textfil animals.txt
         // 1. Som sparar alla namn + mellanslag + Katt/Hund + mellanslag + ålder
         // 2. Skapa en klass Animal som har attributen Namn + ålder + ägare (Klass)
-        // 3. Klass Dog/Cat som har foodPreference eller något annat som inte är i superClass, ärver det andra av Animal.Animal
+        // 3. Klass Dog/Cat som har foodPreference eller något annat som inte är i superClass, ärver det andra av Animal
         // 4. Löper igenom den nya filen och skapar upp Cat/Dog och sorterar dem i listor av Cats / Dogs separat
         // 5. Skriv ut listorna till terminalen
         // 6. Om de finns tid, implementera ngt testcase (Junit) - KLAR, finns 2 Junit tester som funkar
 
 
-        // 1. + Lite Arv Testande
+        // 1, 2, 3 + Lite Arv Testande med Generic Printer Klass
         FileHandler.handleCreateAnimalFile();
 
         Cat dexter = new Cat("Dexter", 3, new AnimalOwner("Alex"), "Tonfisk");
-        System.out.println(dexter.getCatInfo() + "\n");
+        dexter.getCatInfo();
+        System.out.println();
 
         Dog alfonz = new Dog("Alfonz", 10, new AnimalOwner("Anki"), "Kyckling");
-        System.out.println(alfonz.getDogInfo());
+        alfonz.getDogInfo();
 
         AnimalOwner agnes = new AnimalOwner("Agnes");
+
         dexter.catSold();
 
-        if(dexter.getAnimalOwner() == null) {
-            System.out.println("\n"+ dexter.getName() + " har ingen ägare just nu!");
-        } else {
-            System.out.println(dexter.getCatInfo());
-        }
+        // Generic test
+        AnimalOwnerPrinter<Cat> printer = new AnimalOwnerPrinter<Cat>(dexter);
+        System.out.println();
+        printer.printOwner();
 
         dexter.newOwner(agnes);
-        System.out.println("\n" + dexter.getCatInfo());
+        printer.printOwner();
+        System.out.println();
+
+
+        // 4, 5 med Cat bara
+        ArrayList<Cat> cats = AnimalCollector.createListOfCats();
+        cats.forEach(cat -> cat.getCatInfo());
+
+        // TODO Gör kanske ngn generisk metod som kan printa ut vald Animal Type
+        // TODO gör ovan exempel med Streams API
+
+
 
 
     }
+
 }

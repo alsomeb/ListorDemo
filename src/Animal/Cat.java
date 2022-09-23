@@ -1,6 +1,6 @@
 package Animal;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
     private String foodPreference;
 
 
@@ -29,15 +29,20 @@ public class Cat extends Animal{
     }
 
 
-    public String getCatInfo() {
-        return "Name: " + getName() +
+    public void getCatInfo() {
+        System.out.println("Name: " + getName() +
                 "\nAge: " + getAge() +
                 "\nOwner: " + animalOwner.getName() +
-                "\nFood preference: " + getFoodPreference();
+                "\nFood preference: " + getFoodPreference() + "\n");
     }
 
     @Override
     public String toString() {
-        return getName() + " gillar: " + getFoodPreference();
+        return "Cat{" +
+                "foodPreference='" + foodPreference + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", animalOwner=" + animalOwner +
+                '}';
     }
 }

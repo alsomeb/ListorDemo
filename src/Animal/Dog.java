@@ -23,11 +23,16 @@ public class Dog extends Animal{
         return "Name: " + getName() +
                 "\nAge: " + getAge() +
                 "\nOwner: " + animalOwner.getName() +
-                "\nFood preference: " + getFoodPreference();
+                "\nFood preference: " + getFoodPreference() + "\n";
     }
 
     @Override
     public String toString() {
-        return getName() + " gillar: " + getFoodPreference();
+        return "Dog{" +
+                "foodPreference='" + foodPreference + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", animalOwner=" + animalOwner +
+                '}';
     }
 }

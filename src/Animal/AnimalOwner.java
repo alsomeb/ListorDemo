@@ -17,6 +17,8 @@ public class AnimalOwner {
 
     @Override
     public String toString() {
-        return "Owner: " + name;
+        return "AnimalOwner{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
