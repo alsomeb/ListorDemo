@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 /*      1. Skapa en textfil som innehåller namn på ett antal personer.
             Skriv ett namn på varje rad i filen.
-            Skriv minst en person som har efternamnet ”Al Hakim”.
+            Skriv minst en person som har efternamnet ”Al-Hakim”.
 
         2. Skriv ett program som läser in alla namn och placerar dem i en lista.
 
